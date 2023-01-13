@@ -1,18 +1,18 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-// import { signIn, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { redirect } from "next/navigation";
 import { getError } from "../../../utils/error";
 
 export default function LoginScreen() {
-  //   const { data: session } = useSession();
+  const { data: session } = useSession();
 
-  //   if (session) {
-  //     redirect("/admin");
-  //   }
+  if (session) {
+    redirect("/admin");
+  }
 
   const {
     handleSubmit,

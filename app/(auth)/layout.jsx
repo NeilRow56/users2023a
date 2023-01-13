@@ -1,10 +1,14 @@
+"use client";
 import "../(site)/globals.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { SessionProvider } from "next-auth/react";
 
 import Link from "next/link";
 
 import { ChevronLeftIcon } from "@heroicons/react/24/outline";
 
-export default function AuthLayout({ children }) {
+export default function AuthLayout({ children, session }) {
   return (
     <html lang="en">
       <head />
@@ -18,7 +22,11 @@ export default function AuthLayout({ children }) {
             <span className="font-medium uppercase">Home</span>
           </Link>
         </div>
-        {children}
+        <SessionProvider session={session}>
+          <ToastContainer position="bottom-center" limit={1} />
+
+          <main>{children}</main>
+        </SessionProvider>
       </body>
     </html>
   );
