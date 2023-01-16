@@ -1,14 +1,31 @@
 "use client";
 
-import React from "react";
-import { BiBrush } from "react-icons/bi";
+import React, { useReducer } from "react";
+import { BiPlus } from "react-icons/bi";
 
-export default function UpdateUserForm() {
+const formReducer = (state, event) => {
+  return {
+    ...state,
+    [event.target.name]: event.target.value,
+  };
+};
+
+export default function AddUserForm() {
+  const [formData, setFormData] = useReducer(formReducer, {});
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (Object.keys(formData).length == 0)
+      return console.log("No form data supplied");
+    console.log(formData);
+  };
+
   return (
-    <form className="grid w-4/6 gap-4 lg:grid-cols-2">
+    <form onSubmit={handleSubmit} className="grid w-4/6 gap-4 lg:grid-cols-2">
       <div className="input-type">
         <input
           type="text"
+          onChange={setFormData}
           name="firstname"
           className="w-full rounded-md border px-5 py-3 focus:outline-none"
           placeholder="FirstName"
@@ -17,6 +34,7 @@ export default function UpdateUserForm() {
       <div className="input-type">
         <input
           type="text"
+          onChange={setFormData}
           name="lastname"
           className="w-full rounded-md border px-5 py-3 focus:outline-none"
           placeholder="LastName"
@@ -25,6 +43,7 @@ export default function UpdateUserForm() {
       <div className="input-type">
         <input
           type="text"
+          onChange={setFormData}
           name="email"
           className="w-full rounded-md border px-5 py-3 focus:outline-none"
           placeholder="Email"
@@ -33,6 +52,7 @@ export default function UpdateUserForm() {
       <div className="input-type">
         <input
           type="text"
+          onChange={setFormData}
           name="salary"
           className="w-full rounded-md border px-5 py-3 focus:outline-none"
           placeholder="Salary"
@@ -41,6 +61,7 @@ export default function UpdateUserForm() {
       <div className="input-type">
         <input
           type="date"
+          onChange={setFormData}
           name="date"
           className="rounded-md border px-5 py-3 focus:outline-none"
           placeholder="Salary"
@@ -51,6 +72,7 @@ export default function UpdateUserForm() {
         <div className="form-check">
           <input
             type="radio"
+            onChange={setFormData}
             value="Active"
             id="radioDefault1"
             name="status"
@@ -63,6 +85,7 @@ export default function UpdateUserForm() {
         <div className="form-check">
           <input
             type="radio"
+            onChange={setFormData}
             value="Inactive"
             id="radioDefault2"
             name="status"
@@ -74,10 +97,10 @@ export default function UpdateUserForm() {
         </div>
       </div>
 
-      <button className="text-md mb-2 flex w-2/6 justify-center rounded-md border bg-yellow-500 px-4 py-2 text-white hover:border-yellow-500 hover:bg-gray-50 hover:text-yellow-500">
-        Update
+      <button className="text-md mb-2 flex w-2/6 justify-center rounded-md border bg-green-500 px-4 py-2 text-white hover:border-green-500 hover:bg-gray-50 hover:text-green-500">
+        Add
         <span className="px-1">
-          <BiBrush size={24} />
+          <BiPlus size={24} />
         </span>
       </button>
     </form>
