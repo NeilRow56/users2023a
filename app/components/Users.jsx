@@ -11,10 +11,7 @@ const Users = async () => {
         <ul className="flex flex-col px-6 text-sm text-white">
           {users?.map((user) => (
             <li key={user._id}>
-              <Link href={`/users/${user._id}`}>
-                {user.name}
-                {user.email}
-              </Link>
+              <Link href={`/users/${user._id}`}>{user.name}</Link>
             </li>
           ))}
         </ul>

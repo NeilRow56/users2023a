@@ -7,7 +7,6 @@ export const getUsers = async () => {
 };
 
 //Single user
-
 export const getUser = async (userId) => {
   let res = await fetch(`${BASE_URL}/api/users/${userId}`);
   if (res) return res.json();

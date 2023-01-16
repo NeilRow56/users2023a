@@ -7,8 +7,8 @@ const Header = () => {
   const { data: session } = useSession();
   return (
     <header className=" flex bg-stone-100 py-4 px-32">
-      <div className="w-[250px] px-6">
-        <h4 className="text-2xl font-bold text-blue-700">Express Blogg</h4>
+      <div className="w-[350px] px-6">
+        <h4 className="text-2xl font-bold text-blue-700">Express Software</h4>
       </div>
       <nav className="flex w-full justify-between">
         {session?.user ? (
@@ -43,6 +43,14 @@ const Header = () => {
                 href="/admin"
               >
                 Admin
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
+                href="/employees"
+              >
+                Employees
               </Link>
             </li>
           </ul>

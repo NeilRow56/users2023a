@@ -29,6 +29,21 @@ const getUsers = async (req, res) => {
 
 export { getUsers };
 
+// get : http://localhost:3000/api/users/1
+export async function getUser(req, res) {
+  try {
+    const { userId } = req.query;
+
+    if (userId) {
+      const user = await User.findById(userId);
+      res.status(200).json(user);
+    }
+    res.status(404).json({ error: "User not Selected...!" });
+  } catch (error) {
+    res.status(404).json({ error: "Cannot get the User...!" });
+  }
+}
+
 // // Create new User = http://localhost:3000/api/user
 const newUser = async (req, res) => {
   try {
