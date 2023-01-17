@@ -4,7 +4,7 @@ const getEmployees = async (req, res) => {
   const employeesCount = await Employee.countDocuments();
 
   try {
-    const employees = await Employee.find().lean();
+    const employees = await Employee.find({}).lean();
 
     // If no employees
     if (!employees?.length) {
@@ -61,3 +61,47 @@ const newEmployee = async (req, res) => {
 };
 
 export { newEmployee };
+
+// put : http://localhost:3000/api/employees/1
+
+export async function patchEmployee(req, res) {
+  try {
+    const { employeeId } = req.query;
+    const formData = req.body;
+
+    if (employeeId && formData) {
+      const employee = await Employee.findByIdAndUpdate(employeeId, formData);
+      res.status(200).json(employee);
+    }
+  } catch (error) {
+    res.status(404).json({ error: "Error While Updating the Data...!" });
+  }
+}
+
+// get : http://localhost:3000/api/employees/1
+export async function getEmployee(req, res) {
+  try {
+    const { employeeId } = req.query;
+
+    if (employeeId) {
+      const employee = await Employee.findById(employeeId);
+      res.status(200).json(employee);
+    }
+  } catch (error) {
+    res.status(404).json({ error: "Cannot get the Employee...!" });
+  }
+}
+
+// delete : http://localhost:3000/api/delete/1
+export async function deleteEmployee(req, res) {
+  try {
+    const { employeeId } = req.query;
+
+    if (employeeId) {
+      const employee = await Employee.findByIdAndDelete(employeeId);
+      return res.status(200).json({ deleted: employeeId });
+    }
+  } catch (error) {
+    res.status(404).json({ error: "Error While Deleting the Employee...!" });
+  }
+}
