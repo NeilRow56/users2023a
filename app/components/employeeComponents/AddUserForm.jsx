@@ -1,5 +1,6 @@
 "use client";
-
+import Bug from "../../components/Bug";
+import Success from "../../components/Success";
 import React, { useReducer } from "react";
 import { BiPlus } from "react-icons/bi";
 
@@ -19,6 +20,9 @@ export default function AddUserForm() {
       return console.log("No form data supplied");
     console.log(formData);
   };
+
+  if (Object.keys(formData).length > 0)
+    return <Success message={"Successfully submitted data"} />;
 
   return (
     <form onSubmit={handleSubmit} className="grid w-4/6 gap-4 lg:grid-cols-2">
