@@ -4,7 +4,7 @@ const getEmployees = async (req, res) => {
   const employeesCount = await Employee.countDocuments();
 
   try {
-    const employees = await Employee.find({}).lean();
+    const employees = await Employee.find().lean();
 
     // If no employees
     if (!employees?.length) {

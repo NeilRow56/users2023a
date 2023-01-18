@@ -33,6 +33,7 @@ const Header = () => {
               <Link
                 className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
                 href="/users"
+                prefetch={false}
               >
                 Users
               </Link>
@@ -41,6 +42,7 @@ const Header = () => {
               <Link
                 className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
                 href="/admin"
+                prefetch={false}
               >
                 Admin
               </Link>
@@ -49,6 +51,7 @@ const Header = () => {
               <Link
                 className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
                 href="/employees"
+                prefetch={false}
               >
                 Employees
               </Link>
@@ -60,6 +63,7 @@ const Header = () => {
               <Link
                 className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
                 href="/signin"
+                prefetch={false}
               >
                 Login
               </Link>
