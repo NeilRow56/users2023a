@@ -81,10 +81,10 @@ export async function patchEmployee(req, res) {
 // get : http://localhost:3000/api/employees/1
 export async function getEmployee(req, res) {
   try {
-    const { employeeId } = req.query;
+    const { slug } = req.query;
 
-    if (employeeId) {
-      const employee = await Employee.findById(employeeId);
+    if (slug) {
+      const employee = await Employee.findById(slug);
       res.status(200).json(employee);
     }
   } catch (error) {

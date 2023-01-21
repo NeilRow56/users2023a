@@ -1,11 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 import React from "react";
 import { getEmployees } from "../../../lib/helperE";
 import { BiEdit, BiTrashAlt } from "react-icons/bi";
 // import { useSelector } from "react-redux";
+import { useQuery } from "react-query";
 
 export default async function Table() {
-  let { employees } = await getEmployees();
+  // let { employees } = await getEmployees();
+  const { isLoading, isError, data, error } = useQuery(
+    "employees",
+    getEmployees
+  );
+
+  if (isLoading) return <div>Employee is Loading...</div>;
+  if (isError) return <div>Got Error {error}</div>;
   return (
     <table className="min-w-full table-auto">
       <thead>
@@ -31,7 +40,7 @@ export default async function Table() {
         </tr>
       </thead>
       <tbody className="bg-gray-200">
-        {employees.map((employee, i) => (
+        {data.map((employee, i) => (
           <Tr {...employee} key={i} />
         ))}
       </tbody>

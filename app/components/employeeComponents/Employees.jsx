@@ -2,6 +2,7 @@
 import React from "react";
 import { getEmployees } from "../../../lib/helperE";
 import { BiEdit, BiTrashAlt } from "react-icons/bi";
+import Link from "next/link";
 // import { useSelector } from "react-redux";
 
 export default async function Table() {
@@ -13,6 +14,7 @@ export default async function Table() {
           <th className="px-16 py-2">
             <span className="text-gray-200">Name</span>
           </th>
+
           <th className="px-16 py-2">
             <span className="text-gray-200">Email</span>
           </th>
@@ -50,10 +52,13 @@ function Tr({ _id, name, avatar, email, salary, date, status }) {
           height={32}
           className="rounded-full object-cover"
         />
-        <span className="ml-2  text-center font-semibold">
-          {name || "unknown"}
-        </span>
+        <Link href={`/employees/employeeIdSummary/${_id}`}>
+          <span className="ml-2  text-center font-semibold">
+            {name || "unknown"}
+          </span>
+        </Link>
       </td>
+
       <td className="px-16 py-2">
         <span>{email || "unknown"}</span>
       </td>
