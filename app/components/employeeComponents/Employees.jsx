@@ -52,7 +52,7 @@ function Tr({ _id, name, avatar, email, salary, date, status }) {
           height={32}
           className="rounded-full object-cover"
         />
-        <Link href={`/employees/employeeIdSummary/${_id}`}>
+        <Link href={`/employees/${_id}`} prefetch={false}>
           <span className="ml-2  text-center font-semibold">
             {name || "unknown"}
           </span>

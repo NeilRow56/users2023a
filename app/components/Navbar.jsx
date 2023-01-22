@@ -37,14 +37,7 @@ const Header = () => {
                 Users
               </Link>
             </li>
-            <li>
-              <Link
-                className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
-                href="/employees/employeeIdSummary"
-              >
-                Id Summary
-              </Link>
-            </li>
+
             <li>
               <Link
                 className="text-sm font-medium uppercase text-stone-500 hover:text-red-900"
