@@ -18,7 +18,7 @@ export default function AddUserForm() {
   const [formData, setFormData] = useReducer(formReducer, {});
   const addMutation = useMutation(addEmployee, {
     onSuccess: () => {
-      queryClient.prefetchQuery("employees", getEmployees);
+      queryClient.prefetchQuery(["employees"], getEmployees);
     },
   });
 
