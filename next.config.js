@@ -4,7 +4,7 @@ const nextConfig = {
     appDir: true,
   },
   images: {
-    domains: ["randomuser.me", "www.w3.org"],
+    domains: ["randomuser.me", "www.w3.org", "image.tmdb.org"],
   },
 };
 
