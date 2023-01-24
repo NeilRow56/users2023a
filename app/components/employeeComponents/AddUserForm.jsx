@@ -3,7 +3,7 @@ import Bug from "../../components/Bug";
 import Success from "../../components/Success";
 import React, { useReducer } from "react";
 import { BiPlus } from "react-icons/bi";
-import { useQueryClient, useMutation } from "react-query";
+import { useQueryClient, useMutation } from "@tanstack/react-query";
 import { addEmployee, getEmployees } from "../../../lib/helperE";
 
 const formReducer = (state, event) => {

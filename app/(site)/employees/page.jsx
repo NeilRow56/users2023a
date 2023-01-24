@@ -1,10 +1,16 @@
 import React from "react";
+import FormComponent from "../../components/employeeComponents/FormComponent";
 import Employees from "../../components/employeeComponents/Employees";
 
-export default function EesPage() {
+export default function FirstPage() {
   return (
-    <div className="w-full">
-      <Employees />
-    </div>
+    <>
+      <div>
+        <FormComponent />
+      </div>
+      <div>
+        <Employees />
+      </div>
+    </>
   );
 }
