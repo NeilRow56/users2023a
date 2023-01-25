@@ -18,7 +18,7 @@ export default function Example() {
           {status === "loading" ? (
             "Loading..."
           ) : session?.user ? (
-            <div className="w-[100px]">{session.user.name}</div>
+            <div className="h-[30px] w-[100px]">{session.user.name}</div>
           ) : (
             <h4>Menu</h4>
           )}
