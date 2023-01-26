@@ -14,11 +14,11 @@ export default function Example() {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
+        <Menu.Button className="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-blue-700  shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-100">
           {status === "loading" ? (
             "Loading..."
           ) : session?.user ? (
-            <div className="h-[30px] w-[100px]">{session.user.name}</div>
+            <div className="h-[24px] w-[100px]">{session.user.name}</div>
           ) : (
             <h4>Menu</h4>
           )}
@@ -42,7 +42,7 @@ export default function Example() {
                 <Link
                   href="#"
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    active ? "bg-gray-100 text-red-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -55,7 +55,7 @@ export default function Example() {
                 <Link
                   href="#"
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    active ? "bg-gray-100 text-red-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -68,7 +68,7 @@ export default function Example() {
                 <Link
                   href="#"
                   className={classNames(
-                    active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                    active ? "bg-gray-100 text-red-900" : "text-gray-700",
                     "block px-4 py-2 text-sm"
                   )}
                 >
@@ -83,7 +83,7 @@ export default function Example() {
                     onClick={() => signOut()}
                     type="submit"
                     className={classNames(
-                      active ? "bg-gray-100 text-gray-900" : "text-gray-700",
+                      active ? "bg-gray-100 text-red-900" : "text-gray-700",
                       "block w-full px-4 py-2 text-left text-sm"
                     )}
                   >

@@ -1,26 +1,24 @@
 "use client";
 import Link from "next/link";
 import DropdownMenu from "./DropdownMenu";
+
 import { useSession } from "next-auth/react";
 import Image from "next/image";
 import rmdblogo from "../../public/rmdb-logo.svg";
 import rmdblogosmall from "../../public/rmdb-logo-small.svg";
 
-const Header = () => {
+const Navbar = () => {
   const { data: session } = useSession();
   return (
-    <header className=" sticky top-0 z-40 flex bg-zinc-900 py-4 px-32">
-      <div className="w-[350px] px-6">
-        <h4 className="text-2xl font-bold text-blue-700">Express Software</h4>
-      </div>
+    <header className=" sticky top-0 z-40 flex bg-zinc-900 py-2 px-32">
       <nav className="flex w-full justify-between">
         {session?.user ? (
-          <ul className="flex  items-center gap-8">
+          <ul className="mt-2  flex items-center gap-8">
             <li>
               <Link href="/">
                 <div className="flex cursor-pointer items-center">
                   <div className="invisible md:visible">
-                    <Image src={rmdblogo} alt="rmdb logo" />
+                    <Image src={rmdblogo} alt="rmdb logo" priority />
                   </div>
                   <div className="absolute  pt-2 md:invisible">
                     <Image
@@ -79,7 +77,7 @@ const Header = () => {
             </li>
           </ul>
         )}
-        <div className="h-10 w-24 bg-blue-100">
+        <div className="h-8 w-24 items-center">
           <DropdownMenu />
         </div>
       </nav>
@@ -87,4 +85,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Navbar;

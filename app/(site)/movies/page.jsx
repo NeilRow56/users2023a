@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useFetchMovies } from "../../../lib/fetchHooks";
+import Header from "../../components/movieComponents/Header";
 import HeroSection from "../../components/movieComponents/Hero";
 import Card from "../../components/movieComponents/Card";
 import Grid from "../../components/movieComponents/Grid";
@@ -16,6 +17,7 @@ const MoviesPage = () => {
   return (
     <main className="relative h-screen overflow-y-scroll">
       {" "}
+      <Header setQuery={setQuery} />
       <HeroSection />
       <Grid />
       <Card />
