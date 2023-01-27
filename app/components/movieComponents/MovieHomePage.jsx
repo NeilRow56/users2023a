@@ -19,7 +19,19 @@ const MoviesPage = () => {
     <main className="relative h-screen overflow-y-scroll">
       {" "}
       <Header setQuery={setQuery} />
-      <HeroSection />
+      {!query && data && data.pages ? (
+        <HeroSection
+          imgUrl={
+            data.pages[0].results[0].backdrop_path
+              ? IMAGE_BASE_URL +
+                BACKDROP_SIZE +
+                data.pages[0].results[0].backdrop_path
+              : "/no_image.jpg"
+          }
+          title={data.pages[0].results[0].title}
+          text={data.pages[0].results[0].overview}
+        />
+      ) : null}
       <Grid />
       <Card />
       <Spinner />

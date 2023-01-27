@@ -17,10 +17,10 @@ const Navbar = () => {
             <li>
               <Link href="/">
                 <div className="flex cursor-pointer items-center">
-                  <div className="invisible md:visible">
+                  <div className="invisible lg:visible">
                     <Image src={rmdblogo} alt="rmdb logo" priority />
                   </div>
-                  <div className="absolute  pt-2 md:invisible">
+                  <div className="absolute  pt-2 lg:invisible">
                     <Image
                       src={rmdblogosmall}
                       width={25}
