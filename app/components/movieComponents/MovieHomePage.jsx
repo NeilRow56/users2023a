@@ -48,13 +48,19 @@ const MoviesPage = () => {
                   key={movie.id}
                   className="cursor-pointer duration-300 hover:text-red-900 hover:opacity-70"
                 >
-                  {movie.original_title}
+                  <Card
+                    imgUrl={
+                      movie.poster_path
+                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                        : "/no_image.jpg"
+                    }
+                    title={movie.original_title}
+                  />
                 </div>
               ))
             )
           : null}
       </Grid>
-      <Card />
       <Spinner />
     </main>
   );
