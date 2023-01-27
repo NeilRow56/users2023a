@@ -1,8 +1,9 @@
+"use client";
 import React, { useState, useRef } from "react";
 import Image from "next/image";
 import rmdblogosmall2 from "../../../../public/tmdb-logo.svg";
 
-const TIME = 300; //ms
+const TIME = 4000; //ms
 
 const SearchInput = ({ setQuery }) => {
   const [text, setText] = useState("");

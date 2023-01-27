@@ -33,7 +33,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className="text-sm font-medium uppercase text-stone-50 hover:text-red-900"
+                className="text-sm font-medium uppercase text-stone-50 hover:text-red-600"
                 href="/signin"
               >
                 Login
@@ -41,7 +41,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className="text-sm font-medium uppercase text-stone-50 hover:text-red-900"
+                className="text-sm font-medium uppercase text-stone-50 hover:text-red-600"
                 href="/users"
               >
                 Users
@@ -50,7 +50,7 @@ const Navbar = () => {
 
             <li>
               <Link
-                className="text-sm font-medium uppercase text-stone-50 hover:text-red-900"
+                className="text-sm font-medium uppercase text-stone-50 hover:text-red-600"
                 href="/employees"
               >
                 Employees
@@ -58,7 +58,7 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                className="text-sm font-medium uppercase text-stone-50 hover:text-red-900"
+                className="text-sm font-medium uppercase text-stone-50 hover:text-red-600"
                 href="/movies"
               >
                 Movies

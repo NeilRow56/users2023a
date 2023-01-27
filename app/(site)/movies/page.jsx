@@ -1,29 +1,11 @@
-"use client";
-import React, { useState } from "react";
-import { useFetchMovies } from "../../../lib/fetchHooks";
-import Header from "../../components/movieComponents/Header";
-import HeroSection from "../../components/movieComponents/Hero";
-import Card from "../../components/movieComponents/Card";
-import Grid from "../../components/movieComponents/Grid";
-import Spinner from "../../components/movieComponents/Spinner";
+import MoviesHomePage from "../../components/movieComponents/MovieHomePage";
 
-const MoviesPage = () => {
-  const [query, setQuery] = useState("");
-  const { data, fetchNextPage, isLoading, isFetching, error } =
-    useFetchMovies(query);
-
-  console.log(data);
-
+const HomePage = async () => {
   return (
-    <main className="relative h-screen overflow-y-scroll">
-      {" "}
-      <Header setQuery={setQuery} />
-      <HeroSection />
-      <Grid />
-      <Card />
-      <Spinner />
-    </main>
+    <>
+      <MoviesHomePage />
+    </>
   );
 };
 
-export default MoviesPage;
+export default HomePage;
