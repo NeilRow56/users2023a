@@ -1,10 +1,10 @@
 // Components
-import Thumb from "../movieComponents/Thumbnail";
+import Thumbnail from "../movieComponents/Thumbnail";
 
 const Card = ({ imgUrl, title, subtitle }) => (
   <div className="h-80">
     <div className="relative h-full">
-      <Thumb imgUrl={imgUrl} />
+      <Thumbnail imgUrl={imgUrl} />
       <div className="absolute bottom-0 w-full rounded-b-xl bg-zinc-800 px-4 py-2">
         <h2 className="truncate text-center text-sm text-cyan-200">{title}</h2>
         {subtitle ? (

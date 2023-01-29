@@ -19,6 +19,8 @@ const MoviesPage = () => {
     if (scrollHeight - scrollTop === clientHeight) fetchNextPage();
   };
 
+  if (error) return <div>Oh noooooooo something went wrong!</div>;
+
   return (
     <main
       className="relative h-screen overflow-y-scroll"
@@ -47,24 +49,21 @@ const MoviesPage = () => {
             : "Popular Movies"
         }
       >
-        {/* //Nested loop */}
-
         {data && data.pages
           ? data.pages.map((page) =>
               page.results.map((movie) => (
-                <div
-                  key={movie.id}
-                  className="cursor-pointer duration-300 hover:text-red-900 hover:opacity-70"
-                >
-                  <Card
-                    imgUrl={
-                      movie.poster_path
-                        ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-                        : "/no_image.jpg"
-                    }
-                    title={movie.original_title}
-                  />
-                </div>
+                <Link key={movie.id} href={`/${movie.id}`}>
+                  <div className="cursor-pointer duration-300 hover:opacity-80">
+                    <Card
+                      imgUrl={
+                        movie.poster_path
+                          ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                          : "/no_image.jpg"
+                      }
+                      title={movie.original_title}
+                    />
+                  </div>
+                </Link>
               ))
             )
           : null}
